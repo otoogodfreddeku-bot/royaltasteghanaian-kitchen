@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore fresh fruit, Ghanaian favorites and continental dishes at RoyalTaste. Browse the menu and order today."
+    />
+    <meta name="theme-color" content="#183c30" />
+    <title>RoyalTaste | Ghanaian Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="RoyalTaste home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-name">RoyalTaste <span>GHANAIAN KITCHEN</span></span>
+      </a>
+      <button class="cart-trigger" id="cart-trigger" type="button" aria-label="Open order, 0 items">
+        My order <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Our menu</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#visit">Visit &amp; contact</a>
+        <a href="#about">Our story</a>
+        <a class="nav-order" href="tel:+233537087035">Call to order <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-background" aria-hidden="true">
+          <img src="assets/hero-chef-kitchen.jpg" alt="" fetchpriority="high" />
+          <img src="assets/hero-chef-illustration.jpg" alt="" />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> GOOD FOOD, GOOD MOOD</p>
+          <h1>A little joy<br />in <em>every bite.</em></h1>
+          <p class="hero-description">
+            Discover fresh fruit, continental favorites and the comforting
+            flavors of Ghana, all made with care.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#menu">Explore our menu <span>↓</span></a>
+            <a class="phone-link" href="tel:+233537087035">
+              <span class="phone-icon" aria-hidden="true">☎</span>
+              <span><small>Call us on</small><strong>053 708 7035</strong></span>
+            </a>
+          </div>
+          <div class="hero-note"><span>✦</span> Freshly made. Happily served.</div>
+        </div>
+        <span class="hero-decoration decoration-one" aria-hidden="true">✳</span>
+        <span class="hero-decoration decoration-two" aria-hidden="true">✦</span>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> WHAT ARE YOU CRAVING?</p>
+            <h2>Find your <em>favorite.</em></h2>
+          </div>
+          <p class="section-intro">Fresh picks and comforting plates, made to make your day.</p>
+        </div>
+        <p class="price-notice">Sample menu prices in Ghana cedis (GH₵). Please confirm availability and final prices when ordering.</p>
+        <p class="visually-hidden" id="order-status" aria-live="polite"></p>
+
+        <div class="category-list" role="group" aria-label="Filter menu by category">
+          <button class="category-button active" data-category="all" aria-pressed="true">Everything <span>✦</span></button>
+          <button class="category-button" data-category="fruit" aria-pressed="false">Fresh fruits <span>●</span></button>
+          <button class="category-button" data-category="continental" aria-pressed="false">Continental <span>●</span></button>
+          <button class="category-button" data-category="local" aria-pressed="false">Local favorites <span>●</span></button>
+          <button class="category-button" data-category="ghana" aria-pressed="false">Ghana local food <span>●</span></button>
+          <button class="category-button" data-category="drinks" aria-pressed="false">Ghanaian drinks <span>●</span></button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid" aria-live="polite">
+          <article class="menu-card" data-category="fruit" data-price="45">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=900&q=80" alt="Fresh fruit bowl with berries and sliced fruit" loading="lazy" />
+              <span class="card-tag">FRESH PICK</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">FRESH FRUITS</p><h3>Rainbow Fruit Bowl</h3></div><span class="card-price">GH₵45</span></div>
+            <p class="card-description">A colorful mix of seasonal fruit, cut fresh and ready to enjoy.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Rainbow%20Fruit%20Bowl.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="fruit" data-price="40">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1571575173700-afb9492e6a50?auto=format&fit=crop&w=900&q=80" alt="A bowl of fresh strawberries and blueberries" loading="lazy" />
+              <span class="card-tag">NATURALLY SWEET</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">FRESH FRUITS</p><h3>Berry Good Mix</h3></div><span class="card-price">GH₵40</span></div>
+            <p class="card-description">Sweet strawberries, blueberries and a little sunshine in a bowl.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Berry%20Good%20Mix.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="fruit" data-price="75">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=900&q=80" alt="Fresh watermelon, citrus and fruit arranged on a table" loading="lazy" />
+              <span class="card-tag">COOL & JUICY</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">FRESH FRUITS</p><h3>Tropical Fruit Platter</h3></div><span class="card-price">GH₵75</span></div>
+            <p class="card-description">A refreshing selection of juicy tropical fruit, perfect for sharing.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Tropical%20Fruit%20Platter.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="continental" data-price="120">
+            <button class="card-image" type="button" aria-label="View Chef's Plated Fish photo">
+              <img src="assets/continental-plated-fish.jpg" alt="Chef's plated fish with fresh vegetables" loading="lazy" />
+              <span class="card-tag">CHEF'S FAVORITE</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">CONTINENTAL</p><h3>Chef's Plated Fish</h3></div><span class="card-price">GH₵120</span></div>
+            <p class="card-description">A beautifully plated fish dish served with fresh vegetables.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Chef%27s%20Plated%20Fish.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="continental" data-price="95">
+            <button class="card-image" type="button" aria-label="View Curry and Naan Feast photo">
+              <img src="assets/continental-curry-naan.jpg" alt="Indian curry dishes served with naan and rice" loading="lazy" />
+              <span class="card-tag">FULL OF FLAVOR</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">CONTINENTAL</p><h3>Curry &amp; Naan Feast</h3></div><span class="card-price">GH₵95</span></div>
+            <p class="card-description">Rich, savory curries served with naan and rice for a comforting meal.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Curry%20and%20Naan%20Feast.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="continental" data-price="115">
+            <button class="card-image" type="button" aria-label="View Chargrilled Fish Platter photo">
+              <img src="assets/continental-grilled-fish.jpg" alt="Chargrilled whole fish served with fresh vegetables" loading="lazy" />
+              <span class="card-tag">FRESH OFF THE GRILL</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">CONTINENTAL</p><h3>Chargrilled Fish Platter</h3></div><span class="card-price">GH₵115</span></div>
+            <p class="card-description">Grilled fish served with crisp vegetables and a bright, savory dressing.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Chargrilled%20Fish%20Platter.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="ghana" data-price="55">
+            <button class="card-image" type="button" aria-label="View Red Red and Fried Plantain photo">
+              <img src="assets/ghana-beans-and-plantain.jpg" alt="Ghanaian black-eyed pea stew served with fried ripe plantain" loading="lazy" />
+              <span class="card-tag">GHANAIAN CLASSIC</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANA LOCAL FOOD</p><h3>Red Red &amp; Fried Plantain</h3></div><span class="card-price">GH₵55</span></div>
+            <p class="card-description">Savory black-eyed pea stew with sweet, golden fried plantain.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Red%20Red%20and%20Fried%20Plantain.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="ghana" data-price="85">
+            <button class="card-image" type="button" aria-label="View Ghana Party Rice Platter photo">
+              <img src="assets/ghana-assorted-rice-platter.jpg" alt="Ghanaian rice platter with assorted meats, egg, gari, and vegetables" loading="lazy" />
+              <span class="card-tag">A FEAST TO SHARE</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANA LOCAL FOOD</p><h3>Ghana Party Rice Platter</h3></div><span class="card-price">GH₵85</span></div>
+            <p class="card-description">A generous local-style rice platter served with assorted sides and proteins.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Ghana%20Party%20Rice%20Platter.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="ghana" data-price="90">
+            <button class="card-image" type="button" aria-label="View Fufu with Light Soup photo">
+              <img src="assets/ghana-fufu-soup.jpg" alt="Fufu served in Ghanaian light soup with chicken and meat" loading="lazy" />
+              <span class="card-tag">COMFORT FOOD</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANA LOCAL FOOD</p><h3>Fufu with Light Soup</h3></div><span class="card-price">GH₵90</span></div>
+            <p class="card-description">Soft fufu paired with a warming, peppery soup and tender meat.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Fufu%20with%20Light%20Soup.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="ghana" data-price="110">
+            <button class="card-image" type="button" aria-label="View Grilled Fish and Banku photo">
+              <img src="assets/ghana-grilled-fish.jpg" alt="Ghana-style grilled fish served with banku and fresh vegetables" loading="lazy" />
+              <span class="card-tag">FRESH OFF THE GRILL</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANA LOCAL FOOD</p><h3>Grilled Fish &amp; Banku</h3></div><span class="card-price">GH₵110</span></div>
+            <p class="card-description">Smoky grilled fish served with banku, fresh vegetables and pepper.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Grilled%20Fish%20and%20Banku.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="ghana" data-price="125">
+            <button class="card-image" type="button" aria-label="View Banku with Grilled Tilapia photo">
+              <img src="assets/ghana-banku-fish.jpg" alt="Whole grilled tilapia with banku, onions, tomatoes and pepper" loading="lazy" />
+              <span class="card-tag">GHANA FAVORITE</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANA LOCAL FOOD</p><h3>Banku &amp; Grilled Tilapia</h3></div><span class="card-price">GH₵125</span></div>
+            <p class="card-description">Grilled tilapia with banku, onions, tomatoes and a side of pepper.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Banku%20and%20Grilled%20Tilapia.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="drinks" data-price="20">
+            <button class="card-image" type="button" aria-label="View Lamugine spiced rice drink photo">
+              <img src="assets/ghana-lamugine.jpg" alt="Traditional Ghanaian Lamugine spiced rice drink" loading="lazy" />
+              <span class="card-tag">GHANAIAN CLASSIC</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANAIAN DRINKS</p><h3>Lamugine</h3></div><span class="card-price">GH₵20</span></div>
+            <p class="card-description">A creamy, gently spiced traditional rice drink, served chilled.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Lamugine.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="drinks" data-price="22">
+            <button class="card-image" type="button" aria-label="View Tiger Nut Drink photo">
+              <img src="assets/ghana-tiger-nut-drink.jpg" alt="Chilled tiger nut milk served with tiger nuts" loading="lazy" />
+              <span class="card-tag">CREAMY &amp; CHILLED</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANAIAN DRINKS</p><h3>Tiger Nut Drink</h3></div><span class="card-price">GH₵22</span></div>
+            <p class="card-description">A smooth, refreshing tiger nut drink made for a cool break.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Tiger%20Nut%20Drink.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="drinks" data-price="18">
+            <button class="card-image" type="button" aria-label="View Sobolo hibiscus drink photo">
+              <img src="assets/ghana-hibiscus-sobolo.jpg" alt="Ghanaian hibiscus sobolo drink served with citrus" loading="lazy" />
+              <span class="card-tag">FRUITY &amp; REFRESHING</span>
+            </button>
+            <div class="card-details"><div><p class="card-category">GHANAIAN DRINKS</p><h3>Sobolo</h3></div><span class="card-price">GH₵18</span></div>
+            <p class="card-description">A vibrant hibiscus drink with a bright, fruity and refreshing taste.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20Sobolo.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="local" data-price="55">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="A freshly prepared bowl of vegetables and grains" loading="lazy" />
+              <span class="card-tag">FRESH & FILLING</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">LOCAL FAVORITES</p><h3>RoyalTaste Fresh Salad</h3></div><span class="card-price">GH₵55</span></div>
+            <p class="card-description">Crisp, colorful greens with tasty toppings for a feel-good meal.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20RoyalTaste%20Fresh%20Salad.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="local" data-price="80">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="A hearty bowl of freshly cooked food" loading="lazy" />
+              <span class="card-tag">HEARTY & DELICIOUS</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">LOCAL FAVORITES</p><h3>RoyalTaste House Bowl</h3></div><span class="card-price">GH₵80</span></div>
+            <p class="card-description">A hearty house-made plate, full of flavor and made with care.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20RoyalTaste%20House%20Bowl.">Order this <span>↗</span></a>
+          </article>
+
+          <article class="menu-card" data-category="local" data-price="70">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80" alt="A vibrant bowl of fresh vegetables and grains" loading="lazy" />
+              <span class="card-tag">MADE WITH CARE</span>
+            </div>
+            <div class="card-details"><div><p class="card-category">LOCAL FAVORITES</p><h3>Garden Goodness Bowl</h3></div><span class="card-price">GH₵70</span></div>
+            <p class="card-description">A generous bowl of fresh ingredients and satisfying flavors.</p>
+            <a class="card-order" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20order%20the%20Garden%20Goodness%20Bowl.">Order this <span>↗</span></a>
+          </article>
+        </div>
+        <p class="menu-empty" id="menu-empty" hidden>We’re preparing this menu. Please check back soon!</p>
+      </section>
+
+      <dialog class="image-viewer" id="image-viewer" aria-label="Food photo preview">
+        <button class="image-viewer-close" type="button" aria-label="Close photo">×</button>
+        <img alt="" />
+        <p></p>
+      </dialog>
+
+      <section class="delivery-section" id="delivery">
+        <div class="delivery-heading">
+          <p class="eyebrow"><span></span> CAPE COAST DELIVERY</p>
+          <h2>From our kitchen<br /><em>to your door.</em></h2>
+          <p>Order directly from RoyalTaste. Add dishes to your order and send your delivery details to us on WhatsApp.</p>
+        </div>
+        <div class="delivery-steps">
+          <article class="delivery-step">
+            <span class="step-number">01</span>
+            <h3>Choose your food</h3>
+            <p>Add your favorites to your order and check the estimated subtotal.</p>
+          </article>
+          <article class="delivery-step">
+            <span class="step-number">02</span>
+            <h3>Confirm on WhatsApp</h3>
+            <p>We confirm availability, your delivery fee, and your final order total.</p>
+          </article>
+          <article class="delivery-step">
+            <span class="step-number">03</span>
+            <h3>Pay &amp; follow delivery</h3>
+            <p>Ask for official MoMo instructions and delivery updates directly from our team.</p>
+            <a href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20please%20send%20me%20an%20update%20on%20my%20delivery." target="_blank" rel="noopener noreferrer">Request a delivery update <span>↗</span></a>
+          </article>
+        </div>
+        <div class="delivery-notice">
+          <strong>Ordering and delivery are confirmed by our team.</strong>
+          <span>MoMo checkout and live GPS tracking are not connected yet. No payment is collected on this website; we will confirm the amount and official payment instructions with you first.</span>
+        </div>
+        <p class="marketplace-note">RoyalTaste is currently the listed restaurant. Other nearby restaurant menus can be added when their details are confirmed.</p>
+      </section>
+
+      <section class="visit-section" id="visit">
+        <div class="visit-heading">
+          <p class="eyebrow"><span></span> COME SAY HELLO</p>
+          <h2>Find <em>RoyalTaste.</em></h2>
+        </div>
+        <div class="visit-grid">
+          <article class="visit-card">
+            <span class="visit-icon" aria-hidden="true">⌖</span>
+            <h3>Our location</h3>
+            <p>Cape Coast, Ghana<br />Delivery coverage and the exact pickup address are confirmed when you contact us.</p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Cape+Coast%2C+Ghana" target="_blank" rel="noopener noreferrer">Explore Cape Coast <span>↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-icon" aria-hidden="true">◷</span>
+            <h3>Opening hours</h3>
+            <p>Monday–Saturday<br /><strong>9:00 AM–8:00 PM</strong><br />Sunday: contact us to confirm.</p>
+            <a href="tel:+233537087035">Call to check availability <span>↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-icon" aria-hidden="true">☎</span>
+            <h3>Talk to us</h3>
+            <p>For orders, delivery coverage, and updates, contact RoyalTaste directly.</p>
+            <a href="tel:+233537087035">053 708 7035 <span>↗</span></a>
+            <a href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20ask%20about%20delivery." target="_blank" rel="noopener noreferrer">WhatsApp RoyalTaste <span>↗</span></a>
+            <a href="sms:+233537087035?body=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20ask%20about%20delivery.">Text RoyalTaste <span>↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-icon" aria-hidden="true">◎</span>
+            <h3>Suggested delivery areas</h3>
+            <p>UCC halls and campus, plus locations across Cape Coast.</p>
+            <a href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20please%20confirm%20delivery%20coverage%20and%20the%20delivery%20fee%20for%20my%20area." target="_blank" rel="noopener noreferrer">Confirm my area <span>↗</span></a>
+          </article>
+        </div>
+        <p class="delivery-area-note">Choose a hall or enter any UCC or Cape Coast location at checkout. Please confirm coverage and any delivery fee before ordering.</p>
+      </section>
+
+      <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+        <button class="checkout-close" id="checkout-close" type="button" aria-label="Close order">×</button>
+        <div class="checkout-content">
+          <p class="eyebrow"><span></span> YOUR ROYALTASTE ORDER</p>
+          <h2 id="checkout-title">Ready when <em>you are.</em></h2>
+          <p class="checkout-intro">Your estimated food subtotal is shown below. We’ll confirm the menu, delivery fee, and final total with you.</p>
+          <div id="cart-items" class="cart-items" aria-live="polite"></div>
+          <div class="cart-subtotal"><span>Estimated food subtotal</span><strong id="cart-subtotal">GH₵0</strong></div>
+          <p class="cart-fee-note">Delivery fee is not included; we’ll confirm it for your area.</p>
+          <form id="checkout-form">
+            <label for="customer-name">Your name</label>
+            <input id="customer-name" name="customerName" autocomplete="name" maxlength="80" required />
+
+            <label for="customer-phone">Contact number</label>
+            <input id="customer-phone" name="customerPhone" type="tel" autocomplete="tel" maxlength="30" required />
+
+            <label for="delivery-area">Delivery area</label>
+            <select id="delivery-area" name="deliveryArea" required>
+              <option value="">Choose an area (coverage to be confirmed)</option>
+              <optgroup label="UCC halls and hostels">
+                <option>Atlantic Hall</option>
+                <option>Adehye Hall</option>
+                <option>Casely Hayford Hall (Casford)</option>
+                <option>Oguaa Hall</option>
+                <option>Valco Hall</option>
+                <option>Kwame Nkrumah Hall</option>
+                <option>Superannuation Hall</option>
+                <option>SRC Hostel</option>
+                <option>Alumni Hostel</option>
+                <option>SSNIT Hostel</option>
+                <option>Another UCC hall or hostel</option>
+                <option>Another location on the UCC campus</option>
+              </optgroup>
+              <optgroup label="Cape Coast">
+                <option>Cape Coast centre</option>
+                <option>Abura</option>
+                <option>Pedu</option>
+                <option>Ola</option>
+                <option>Amamoma</option>
+                <option>Another location in Cape Coast</option>
+              </optgroup>
+            </select>
+
+            <label for="delivery-address">Hall, area, street address, or nearby landmark</label>
+            <textarea id="delivery-address" name="deliveryAddress" rows="2" maxlength="200" placeholder="Enter your hall, block or room, street, or a nearby landmark" required></textarea>
+
+            <label for="payment-network">Preferred Mobile Money network</label>
+            <select id="payment-network" name="paymentNetwork" required>
+              <option value="">Choose a network</option>
+              <option>MTN MoMo</option>
+              <option>Telecel Cash</option>
+              <option>AT Money</option>
+            </select>
+
+            <button class="button button-dark checkout-submit" id="checkout-submit" type="submit">Send order to WhatsApp <span>↗</span></button>
+            <a class="button button-dark checkout-submit whatsapp-submit" id="whatsapp-submit" href="#" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp to send order <span>↗</span></a>
+            <a class="button button-dark checkout-submit sms-submit" id="sms-submit" href="#" hidden>Send order by SMS <span>↗</span></a>
+          </form>
+          <p class="visually-hidden" id="checkout-status" aria-live="polite"></p>
+          <a class="checkout-call-link" href="tel:+233537087035">Prefer to call? Call RoyalTaste on 053 708 7035</a>
+          <a class="checkout-sms-link" href="sms:+233537087035?body=Hello%20RoyalTaste%2C%20please%20help%20me%20place%20an%20order.">Prefer to text? Send RoyalTaste an SMS</a>
+          <p class="payment-safety-note">This opens WhatsApp to request confirmation; it does not make a payment. Wait for RoyalTaste to confirm your order and official Mobile Money instructions. Never share your MoMo PIN.</p>
+          <p class="checkout-privacy-note">Your checkout details are not stored on this website; they are included in the WhatsApp message you choose to send.</p>
+        </div>
+      </dialog>
+
+      <section class="about-section" id="about">
+        <div class="about-photo">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1100&q=85" alt="A delicious meal ready to share" loading="lazy" />
+          <span class="about-stamp">GOOD FOOD<br />GOOD PEOPLE</span>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow"><span></span> A LITTLE ABOUT US</p>
+          <h2>Made fresh.<br /><em>Served with love.</em></h2>
+          <p>At RoyalTaste, good food should feel welcoming, joyful and full of flavor. Enjoy fresh fruit, authentic Ghanaian favorites or a comforting continental plate — thoughtfully prepared and served with care.</p>
+          <a class="button button-dark" href="https://wa.me/233537087035?text=Hello%20RoyalTaste%2C%20I%27d%20like%20to%20place%20an%20order.">Say hello & order <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-name">RoyalTaste <span>GHANAIAN KITCHEN</span></span>
+      </a>
+      <p>Good food, good mood. <span>♥</span></p>
+      <a class="footer-phone" href="tel:+233537087035">Call us: 053 708 7035 <span>↗</span></a>
+      <small>© <span id="year"></span> RoyalTaste</small>
+    </footer>
+  </body>
+</html>
